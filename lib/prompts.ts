@@ -1,3 +1,4 @@
+// lib/prompts.ts
 const basePrompt = `
  
 `;

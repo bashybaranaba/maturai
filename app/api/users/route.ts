@@ -1,3 +1,4 @@
+//api/users/route.ts
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/User";
 import { NextResponse } from "next/server";
@@ -21,7 +22,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     await dbConnect();
-    const { email, name } = await request.json();
+    const { email, fullname, username, display_name } = await request.json();
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -32,7 +33,9 @@ export async function POST(request: Request) {
 
     const user = await User.create({
       email,
-      name,
+      fullname,
+      username,
+      display_name,
     });
 
     return new NextResponse(JSON.stringify(user), {

@@ -1,4 +1,4 @@
-// models/App.js
+// models/ExamQuestion.ts
 import mongoose from "mongoose";
 import User from "@/models/User";
 import ExamPaper from "@/models/ExamPaper";

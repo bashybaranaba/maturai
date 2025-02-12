@@ -1,4 +1,4 @@
-// models/App.js
+// models/Subject.ts
 import mongoose from "mongoose";
 import User from "@/models/User";
 
